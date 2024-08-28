@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WS.Views.PagePaciente" Title="Cadastro de Pacientes">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BorderColor="Black" CornerRadius="20" Margin="10">
+                <StackLayout>
+                    <Label Text="Nome do Paciente:" FontAttributes="Bold"/>
+                    <Entry x:Name="txtNome"/>
+                    <Label Text="Vacinas:" FontAttributes="Bold"/>
+                    <Picker x:Name="pckVacina" Title="Selecione uma Vacina:"/>
+                    <!--<Label Text="Dia que Tomou a Vacina:" FontAttributes="Bold"/>
+                    <DatePicker x:Name="dpckDia" Format="dd/MM/yyyy"/>
+                    <Label Text="Próxima Dose:" FontAttributes="Bold"/>
+                    <DatePicker  x:Name="dpckProximaDose" Format="dd/MM/yyyy" IsEnabled="False"/>-->
+                    <ListView x:Name="lsvPacientes" HasUnevenRows="True" SeparatorColor="Black" ItemSelected="lsvPacientes_ItemSelected" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Nome, StringFormat='Nome do Paciente: {0}'}"/>
+                                        <Label Text="{Binding NomeVacina, StringFormat='Vacina: {0}'}"/>
+                                        <Label Text="{Binding DiaTomado, StringFormat='Dia Tomado: {0}'}"/>
+                                        <Label Text="{Binding PromixaDose, StringFormat='Proxima Dose: {0}'}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button x:Name="btnAdicionar" Text="Adicionar Vacina" CornerRadius="20" BackgroundColor="Yellow" FontAttributes="Bold" Clicked="btnAdicionar_Clicked"/>
+                    <Button x:Name="btnCadastrar" Text="Cadastrar Paciente" CornerRadius="20" BackgroundColor="LightGreen" FontAttributes="Bold" Clicked="btnCadastrar_Clicked"/>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnVoltar" Text="Voltar" VerticalOptions="End" CornerRadius="20" BackgroundColor="IndianRed" FontAttributes="Bold" Clicked="btnVoltar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

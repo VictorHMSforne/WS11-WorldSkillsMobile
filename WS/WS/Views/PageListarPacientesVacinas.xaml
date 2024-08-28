@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WS.Views.PageListarPacientesVacinas" Title="Listagem de Vacinas">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BorderColor="Black" CornerRadius="20" Margin="20" HeightRequest="360">
+                <ListView x:Name="lsvVacinas" HasUnevenRows="True" SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding NomeVacina, StringFormat='Nome da Vacina: {0}'}"/>
+                                    <Label Text="{Binding Validade, StringFormat='Validade da Vacina: {0}'}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            <Button x:Name="btnVoltar" Text="Voltar" BackgroundColor="IndianRed" CornerRadius="20" FontAttributes="Bold" Clicked="btnVoltar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

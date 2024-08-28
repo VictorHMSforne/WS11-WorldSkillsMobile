@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WS.Views.PageVacina" Title="Cadastrar Vacinas">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BorderColor="Black" CornerRadius="20" Margin="20" HeightRequest="360">
+                <StackLayout>
+                    <Label Text="Nome da Vacina:" FontAttributes="Bold"/>
+                    <Entry x:Name="txtNome"/>
+                    <Label Text="Validade da Vacina:" FontAttributes="Bold"/>
+                    <DatePicker x:Name="dtpValidade" Format="dd/MM/yyyy"/>
+                    <Button x:Name="btnCadastrar" Text="Cadastrar Vacina" CornerRadius="20" BackgroundColor="LightGreen" FontAttributes="Bold" Clicked="btnCadastrar_Clicked"/>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnVoltar" Text="Voltar" VerticalOptions="End" CornerRadius="20" BackgroundColor="IndianRed" FontAttributes="Bold" Clicked="btnVoltar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
